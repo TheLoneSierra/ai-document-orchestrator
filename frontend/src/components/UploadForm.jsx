@@ -18,9 +18,7 @@ export default function UploadForm({ setExtractedData }) {
       formData.append("file", file);
       formData.append("question", question);
 
-      console.log(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/process-document`)
-
-      const res = await fetch(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/process-document`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/process-document`, {
         method: "POST",
         body: formData,
       });
