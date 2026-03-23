@@ -17,7 +17,8 @@ export default function EmailSection({ setResult, data }) {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      console.log("Backend URL: ", `${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/send-email`)
+      const response = await fetch(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
